@@ -1,0 +1,63 @@
+Primeros pasos para utilizar la app
+
+1- En el terminal en el VScode en opcion node, se hizo la instalación
+de los siguientes comandos:
+   npm init -y
+   npm i express
+   npm mocha
+   npm i nodemon -D
+   npm chai
+se agrego el siguiente comando en el archivo package.json en la opcion 'Debug'
+   "dev":"nodemon index.js"
+
+2- Para utilizar la app, en el terminal hay que escribir lo siguiente 
+    npm run dev
+posteriormente, se recomienda utilizacion de postman o cualquier aplicativo
+que utilise los metodos GET, POST, PUT y DETELE.
+
+Se debe ingresar a la siguiente ruta:
+	http://localhost:3000
+alli se indican las rutas a las consultas a realizar.
+- CONSULTAR ANIMES
+En Postman se seleciona la opcion GET y a la ruta anterior
+se le adiciona /anime quedando asi:
+        http://localhost:3000/anime
+- CONSULTAR ANIME POR ID
+En Postman se seleciona la opcion GET y a la ruta anterior
+se le adiciona /anime?id= al lado de igual se escribe el numero
+de la ID que se quiere consultar quedando asi:
+        http://localhost:3000/anime?id=1
+- CREAR DATOS NUEVOS
+En Postman se seleciona la opcion POST y en la ruta anterior
+se adiciona /crear quedando asi:
+	http://localhost:3000/crear
+posteriormente en parametros se ingresa a "Body", luego selecciona
+"raw" en formato JSON
+para ingresar datos estos deben ir entremedio de corchete y con 
+comillas, ejemplo:
+	{
+	"nombre": "Ranma 1/2",
+	"genero":"shonen",
+	"año":"1987",
+	"autor":"Rumiko Takahashi"
+	}
+- MODIFICAR DATOS
+En Postman se selecciona la opcion PUT y en la ruta anterior
+se adiciona /modificar?id= se ingresa el numero de ID que se
+quiere modificar quedando asi:
+	http://localhost:3000/modificar?id=6
+posteriormente en parametros se ingresa a "Body", luego selecciona
+"raw" en formato JSON
+para ingresar datos estos deben ir entremedio de corchete y con 
+comillas, ejemplo:
+	{
+	"nombre": "Kimetsu no yaiba",
+	"genero":"shonen",
+	"año":"2019",
+	"autor":"Koyoharu Gotouge"
+	}
+- ELIMINAR DATOS
+En Postman se selecciona la opcion DELETE y en la ruta anterior
+se adiciona /eliminar?id= se ingresa el numero de ID que se
+quiere eliminar quedando asi:
+	http://localhost:3000/eliminar?id=6
